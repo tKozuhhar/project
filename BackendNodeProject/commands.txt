@@ -1,0 +1,18 @@
+sudo service postgresql restart
+sudo service postgresql start
+sudo service postgresql stop
+sudo service postgresql status
+
+psql -h localhost -U postgres -f postgres-sakila-schema.sql # import tables
+
+psql -h localhost -U postgres -d postgres -p 5432 # enter the database
+\i postgres-sakila-insert-data.sql # copy data into tables
+
+reset the passw: sudo -u postgres psql postgres
+
+pgadmin: sudo service apache2 start
+used port 8089 http://localhost:8089/pgadmin4/browser/
+
+Sequelize:
+sequelize-auto -o "./models" -d postgres -h localhost -u postgres -x '1234' -s --dialect postgres
+https://web.postman.co/workspace/My-Workspace~e0b552ef-729c-44a2-8478-6b2560758792/history/29218746-bac34e27-3734-4651-86e2-c4e86359278a
